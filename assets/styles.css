@@ -1,0 +1,109 @@
+* {
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f8fafc;
+}
+
+.nav-link {
+  position: relative;
+  color: #475569;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  background: #0ea5e9;
+  bottom: -7px;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #0f172a;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.hero-image {
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(8, 37, 68, 0.94) 0%, rgba(8, 37, 68, 0.76) 46%, rgba(8, 37, 68, 0.28) 100%),
+    linear-gradient(0deg, rgba(8, 37, 68, 0.35), rgba(8, 37, 68, 0.35));
+}
+
+.section-tag {
+  background: #e0f2fe;
+  border-radius: 999px;
+  color: #0369a1;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  text-transform: uppercase;
+}
+
+.card-hover {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card-hover:hover {
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
+  transform: translateY(-4px);
+}
+
+.brand-pill {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.brand-pill:hover {
+  background: #0f2f54;
+  border-color: #0f2f54;
+  color: #ffffff;
+}
+
+#mobile-menu {
+  display: none;
+}
+
+#mobile-menu.open {
+  display: block;
+}
+
+.content-band {
+  margin-top: 4rem;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+@media (max-width: 767px) {
+  .hero-overlay {
+    background: linear-gradient(0deg, rgba(8, 37, 68, 0.9), rgba(8, 37, 68, 0.78));
+  }
+
+  .content-band {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+}
