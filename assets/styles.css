@@ -41,6 +41,7 @@ img {
   margin: 0 auto;
   max-width: 1160px;
   padding: 0 24px;
+  width: 100%;
 }
 
 .site-nav {
@@ -256,6 +257,15 @@ img {
   padding: 84px 24px;
 }
 
+.hero-copy,
+.hero-panel,
+.split > *,
+.section-head,
+.cta-band > * {
+  max-width: 100%;
+  min-width: 0;
+}
+
 .eyebrow,
 .section-tag {
   background: var(--sky-soft);
@@ -269,6 +279,7 @@ img {
   padding: 7px 13px;
   text-transform: uppercase;
   max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .hero-copy h1,
@@ -430,6 +441,51 @@ h2 {
 
 h3 {
   font-weight: 760;
+}
+
+/* Tailwind CDN injects its reset after this stylesheet. These class-scoped
+   heading rules intentionally outrank that reset on the live Vercel build. */
+.section h2,
+.page-hero h2,
+.section-head h2,
+.split h2,
+.cta-band h2,
+.leader h2,
+.contact-layout h1 + p + h2 {
+  color: var(--ink);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 800;
+  line-height: 1.12;
+  margin: 14px 0 16px;
+}
+
+.dark .section h2,
+.dark .page-hero h2,
+.dark .section-head h2,
+.dark .split h2,
+.dark .cta-band h2,
+.page-hero.dark h2 {
+  color: var(--white);
+}
+
+.info-card h3,
+.footer h3,
+.feature-list h3,
+.partner-grid h3,
+.service-detail-grid h2,
+.product-card h2,
+.contact-form h2 {
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 780;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.footer h3 {
+  color: var(--white);
+  font-size: 14px;
+  margin: 0 0 14px;
 }
 
 p {
@@ -897,6 +953,25 @@ p {
     padding-right: 18px;
   }
 
+  .site-nav,
+  .home-hero,
+  .hero-grid,
+  .hero-copy,
+  .hero-panel {
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  .hero-grid {
+    display: block;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero-panel {
+    margin-top: 40px;
+  }
+
   .hero-showcase,
   .stats-grid,
   .metric-panel {
@@ -911,7 +986,7 @@ p {
   .hero-copy h1,
   .page-hero h1,
   .contact-layout h1 {
-    font-size: 34px;
+    font-size: 30px;
     line-height: 1.12;
   }
 
@@ -919,6 +994,7 @@ p {
   .page-hero p,
   .contact-layout > div > p {
     font-size: 16px;
+    max-width: calc(100vw - 36px);
   }
 
   .eyebrow,
@@ -926,6 +1002,7 @@ p {
     border-radius: 8px;
     display: inline-block;
     line-height: 1.45;
+    max-width: calc(100vw - 36px);
     white-space: normal;
   }
 }
